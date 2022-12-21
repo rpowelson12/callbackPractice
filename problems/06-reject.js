@@ -21,8 +21,22 @@ let hasA = function(s) {
 console.log(reject(['breadth', 'GRAPH', 'depth', 'height'], hasA)); // [ 'depth', 'height' ]
 *******************************************************************************/
 
-let reject = function() {
+/**
+ * 1. function accepts array and cb
+ * 2. cb called for each element
+ * 3. new array should contain elements that were false in cb
+ */
 
+let reject = function(array, cb) {
+    let newArray = [];
+
+    for (let i = 0; i < array.length; i++) {
+        let element = array[i];
+        if (!cb(element, i, array)) {
+            newArray.push(element);
+        }
+    }
+    return newArray;
 };
 
 

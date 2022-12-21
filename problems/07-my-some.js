@@ -23,8 +23,21 @@ let result3 = mySome(['soup', 'noodles', 'bike', 'ship'], function(ele) {
 console.log(result3);   // true
 *******************************************************************************/
 
-let mySome = function() {
+/**
+ * 1. function accepts array and cb
+ * 2. cb passes in element and index
+ * 3. returns boolean 
+ */
 
+let mySome = function(array, cb) {
+    let answer = false;
+    for (let i = 0; i < array.length; i++) {
+        let element = array[i];
+        if (cb(element, i)) {
+            answer =  true;
+        }
+    }
+    return answer;
 };
 
 

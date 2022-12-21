@@ -18,9 +18,22 @@ let result2 = myFilter(['choose', 'big', 'words', 'only'], function (s) {
 });
 console.log(result2);      // ['choose', 'words', 'only']
 *******************************************************************************/
+/*
+    1. go to each element of the array
+    2. cb function should return new array with any "true" elements
+*/
 
-let myFilter = function() {
 
+let myFilter = function(array, cb) {
+    let newArray = [];
+
+    for (let i = 0; i < array.length; i++) {
+        if (cb(array[i], i, array)) {
+            newArray.push(array[i]);
+        }
+        
+    }
+    return newArray;
 };
 
 

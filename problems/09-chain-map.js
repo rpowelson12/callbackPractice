@@ -29,8 +29,19 @@ console.log(chainMap(4, square, half));         // 8
 console.log(chainMap(4, half, square));         // 4
 *******************************************************************************/
 
-let chainMap = function() {
 
+/**
+ * 1. function accepts value and any number of cb
+ * 2. value gets passed through all cbs
+ * 3. return new value
+ */
+
+let chainMap = function(value, ...cb) {
+    for (let i = 0; i < cb.length; i++) {
+        let modifier = cb[i];
+        value = modifier(value);
+    }
+    return value;
 };
 
 
