@@ -35,18 +35,7 @@ console.log(result4);   // false
  */
 let none = function(array, cb) {
 
-    solution = [];
-    for (element in array) {
-        if(cb(element)){
-            solution.push(element);
-        }
-    }
-    if (solution.length === 0) {
-        return true;
-    }
-    else {
-        return false;
-    }
+    
     
 };
 

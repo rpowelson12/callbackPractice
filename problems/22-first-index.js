@@ -21,9 +21,22 @@ let result3 = firstIndex(['canine', 'feline', 'tree'], function (s) {
 });
 console.log(result3); // -1
 *******************************************************************************/
+/**
+ * 1. accepts array and a cb
+ * 2. return index of the first element of the array which is true
+ * 3. if no elements are true return -1
+ */
+let firstIndex = function(array, cb) {
+    let index = -1;
 
-let firstIndex = function() {
+    for (let i = 0; i < array.length; i++) {
+        let element = array[i];
+        if (cb(element)){
+            return index = i;
+        }
+    }
 
+    return index;
 };
 
 

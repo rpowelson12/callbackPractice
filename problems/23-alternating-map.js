@@ -34,10 +34,26 @@ console.log(alternatingMap(['hEy', 'EVERYone', 'whats', 'uP??'], yell, whisper))
 // [ 'HEY!', '..everyone..', 'WHATS!', '..up??..' ]
 
 *******************************************************************************/
+/**
+ *  1. accepts array and 2 cb
+ *  2. sends elements to cb in alternating fashion
+ */
 
+let alternatingMap = function(array, cb1, cb2) {
+    let answer = [];
 
-let alternatingMap = function() {
+    for (let i = 0; i < array.length; i++) {
+        let element = array[i];
 
+        if (i % 2 === 0) {
+            answer.push(cb1(element));
+        }
+        else {
+            answer.push(cb2(element));
+        }
+    }
+
+    return answer;
 };
 
 

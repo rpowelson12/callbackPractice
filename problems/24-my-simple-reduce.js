@@ -34,8 +34,21 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
   optional initial accumulator
 *******************************************************************************/
 
-let mySimpleReduce = function() {
+/**
+ * 1. accepts array and cb
+ * 2. mimic array.reduce
+ *  a. take first element assign accum
+ *  b. add second number to accum and replace
+ *  c. repeat for entire array length
+*/
+let mySimpleReduce = function(array, cb) {
+    accum = array[0]; 
 
+    for (let i = 1; i < array.length; i++) {
+        accum = cb(accum, array[i]);        
+    }
+
+    return accum;
 };
 
 
