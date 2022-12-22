@@ -27,9 +27,27 @@ let result4 = none([4, -5, 7, -1], function(n) {
 });
 console.log(result4);   // false
 *******************************************************************************/
+/**
+ * 1. accepts array and cb
+ * 2. iterate array and push element to cb
+ * 3. if all element are false return true
+ * 4. otherwise return false
+ */
+let none = function(array, cb) {
 
-let none = function() {
-
+    solution = [];
+    for (element in array) {
+        if(cb(element)){
+            solution.push(element);
+        }
+    }
+    if (solution.length === 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+    
 };
 
 

@@ -18,8 +18,19 @@ mapMutator(arr2, function (el, i) {
 console.log(arr2); // [ 0, 9, 20 ]
 *******************************************************************************/
 
-let mapMutator = function() {
+/**
+ * 1. accepts array and cb
+ * 2. pass element and index into the cb using them to mutate original array. 
+ * 3. return mutated array
+ */
 
+
+let mapMutator = function(array, cb) {
+    for (let i = 0; i < array.length; i++) {
+        let element = array[i];
+        array[i] = (cb(element, i));
+    }
+    return array;
 };
 
 

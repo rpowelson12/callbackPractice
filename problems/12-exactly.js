@@ -26,9 +26,27 @@ let result4 = exactly(['follow', 'the', 'yellow', 'brick', 'road'], 0, function 
 console.log(result4); // true
 
 *******************************************************************************/
+/**
+ * 1. accepts array, number, cb
+ * 2. iterate array
+ * 3. pass element to call back
+ * 4. determine how many true elements from call back
+ * 5. are there num number of true elements?
+ */
+let exactly = function(array, num, cb) {
+    let count = 0;
+    let answer = false;
 
-let exactly = function() {
-
+    for (let i = 0; i < array.length; i++) {
+        let element = array[i];
+        if (cb(element)){
+            count++;
+        }
+    }
+    if (count === num) {
+        answer = true;
+    }
+    return answer;
 };
 
 
